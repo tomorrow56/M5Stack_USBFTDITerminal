@@ -11,5 +11,5 @@ https://www.facebook.com/masawo.yamazaki/videos/2053482424663394/
 ### M5Stack-SD-Updater
 https://macsbug.wordpress.com/2018/03/12/m5stack-sd-updater/
 
-###USB Host Shield for M5Stack
+### USB Host Shield for M5Stack
 https://thousandiy.wordpress.com/2018/06/16/usb-host-for-m5stack/
