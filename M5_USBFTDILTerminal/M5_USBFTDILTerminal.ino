@@ -196,7 +196,7 @@ void loop()
         xPos = 0;
         yDraw = scroll_line();
         scrollAddress(0);
-z2２３        InitFlag = true;
+        InitFlag = true;
       }
 
       if( rcvd > 2 ) { //more than 2 bytes received
