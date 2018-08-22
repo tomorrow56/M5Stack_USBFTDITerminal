@@ -191,16 +191,17 @@ void loop()
         ErrorMessage<uint8_t>(PSTR("Ret"), rcode);
       }
 
-      // Countermeasures against the loss of display of the first data
-      if(InitFlag == false){
-        xPos = 0;
-        yDraw = scroll_line();
-        scrollAddress(0);
-        InitFlag = true;
-      }
-
       if( rcvd > 2 ) { //more than 2 bytes received
         for(uint16_t i = 2; i < rcvd; i++ ) {
+ 
+        // Countermeasures against the loss of display of the first data
+        if(InitFlag == false){
+          xPos = 0;
+          yDraw = scroll_line();
+          scrollAddress(0);
+          InitFlag = true;
+        }
+
           Serial.print((char)buf[i]);
 //          data = (char)buf[i];
           data = buf[i];
