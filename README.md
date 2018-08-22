@@ -13,3 +13,7 @@ https://macsbug.wordpress.com/2018/03/12/m5stack-sd-updater/
 
 ### USB Host Shield for M5Stack
 https://thousandiy.wordpress.com/2018/06/16/usb-host-for-m5stack/
+
+## Update
+  2018/08/20 Initial release
+  2018/08/22 Supports FT231X
