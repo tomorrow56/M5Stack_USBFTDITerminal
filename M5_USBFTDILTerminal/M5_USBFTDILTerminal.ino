@@ -2,7 +2,7 @@
   This sketch implements a simple serial receive terminal
   program for monitoring serial debug messages from another
   board.
-  
+
   Connect GND to target board GND
   Connect RX line to TX line of target board
   Make sure the target and terminal have the same baud rate
@@ -10,14 +10,14 @@
 
   The sketch works with the ILI9341 TFT 240x320 display and
   the called up libraries.
-  
+
   The sketch uses the hardware scrolling feature of the
   display. Modification of this sketch may lead to problems
   unless the ILI9341 data sheet has been understood!
 
   Updated by Bodmer 21/12/16 for TFT_eSPI library:
   https://github.com/Bodmer/TFT_eSPI
-  
+
   BSD license applies, all text above must be included in any
   redistribution
  *************************************************************/
@@ -29,7 +29,7 @@
 #include <M5Stack.h>
 #include "M5StackUpdater.h"
 
-#include <cdcftdi.h>
+#include "cdcftdimod.h"
 #include <usbhub.h>
 
 #include "pgmstrings.h"
@@ -40,13 +40,13 @@
 #endif
 #include <SPI.h>
 
-class FTDIAsync : public FTDIAsyncOper
+class FTDIMODAsync : public FTDIMODAsyncOper
 {
 public:
-    uint8_t OnInit(FTDI *pftdi);
+    uint8_t OnInit(FTDIMOD *pftdi);
 };
 
-uint8_t FTDIAsync::OnInit(FTDI *pftdi)
+uint8_t FTDIMODAsync::OnInit(FTDIMOD *pftdi)
 {
     uint8_t rcode = 0;
 
@@ -67,8 +67,8 @@ uint8_t FTDIAsync::OnInit(FTDI *pftdi)
 
 USB              Usb;
 //USBHub         Hub(&Usb);
-FTDIAsync        FtdiAsync;
-FTDI             Ftdi(&Usb, &FtdiAsync);
+FTDIMODAsync        FtdiAsync;
+FTDIMOD             Ftdi(&Usb, &FtdiAsync);
 
 // The scrolling area must be a integral multiple of TEXT_HEIGHT
 //#define TEXT_HEIGHT 16 // Height of text to be printed and scrolled
@@ -134,7 +134,7 @@ void setup()
  */
   M5.Lcd.setTextColor(TFT_RED);
   M5.Lcd.drawCentreString("Start", 320/2, 0, 2);
- 
+
   if (Usb.Init() == -1){
     Serial.println("OSC did not start.");
   }
@@ -193,7 +193,7 @@ void loop()
 
       if( rcvd > 2 ) { //more than 2 bytes received
         for(uint16_t i = 2; i < rcvd; i++ ) {
- 
+
         // Countermeasures against the loss of display of the first data
         if(InitFlag == false){
           xPos = 0;
