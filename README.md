@@ -1,10 +1,10 @@
-# M5Stack_USB_Host_FTDI_Serial_Monitor
-M5Stack Serial Monitor for FTDI with USB Host Module
+# M5Stack + USB Host CDC FTDI Terminal
+M5Stack USB CDC Terminal for FTDI
 
-![FTDI Terminal](img/FTDI_TERMINAL.JPG)
+![FTDI Terminal](img/M5_USBFTDITerminal.jpg)
 
-## Movie
-https://www.facebook.com/masawo.yamazaki/videos/2053482424663394/
+## Movie(twitter)
+https://twitter.com/tomorrow56/status/1380688525536886789
 
 ## The library used in this work
 
@@ -15,5 +15,4 @@ https://macsbug.wordpress.com/2018/03/12/m5stack-sd-updater/
 https://thousandiy.wordpress.com/2018/06/16/usb-host-for-m5stack/
 
 ## Update
-  2018/08/20 Initial release
-  2018/08/22 Supports FT231X
+  2021/04/10
