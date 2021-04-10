@@ -14,5 +14,8 @@ https://macsbug.wordpress.com/2018/03/12/m5stack-sd-updater/
 ### USB Host Shield for M5Stack
 https://thousandiy.wordpress.com/2018/06/16/usb-host-for-m5stack/
 
+### M5Stack_ScrollTextWindow
+https://github.com/totsucom/M5Stack_ScrollTextWindow
+
 ## Update
   2021/04/10
